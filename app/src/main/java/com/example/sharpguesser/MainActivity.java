@@ -25,34 +25,37 @@ public class MainActivity extends AppCompatActivity {
         Random rand = new Random();
         gene_num = rand.nextInt(9998) + 1;
 
-        EditText input_check = (EditText)findViewById(R.id.num_guessed);
-        input_check.addTextChangedListener(new TextWatcher(){
+        EditText input_check = (EditText) findViewById(R.id.num_guessed);
+        input_check.addTextChangedListener(new TextWatcher() {
+            EditText temp = (EditText) findViewById(R.id.num_guessed);
+            Button btn_temp = findViewById(R.id.guess);
+
             @Override
             public void onTextChanged(CharSequence text, int start, int before, int count) {
-                EditText temp = (EditText) findViewById(R.id.num_guessed);
-                Button btn_temp = findViewById(R.id.guess);
+
                 if (temp.getText().length() != 0) {
-                    btn_temp.setVisibility(0);
-                }
-                else {
-                    btn_temp.setVisibility(8);
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
                 }
             }
 
             @Override
-            public void beforeTextChanged(CharSequence text, int start, int count,int after) {
+            public void beforeTextChanged(CharSequence text, int start, int count, int after) {
 
-                }
+            }
 
             @Override
             public void afterTextChanged(Editable edit) {
-
+                if (temp.getText().length() != 0) {
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
+                }
             }
         });
 
     }
-
-
 
 
     public void btn_guess(View view) {
@@ -87,9 +90,67 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Random rand = new Random();
         gene_num = rand.nextInt(10000);
+        EditText input_check = (EditText) findViewById(R.id.num_guessed);
+        input_check.addTextChangedListener(new TextWatcher() {
+            EditText temp = (EditText) findViewById(R.id.num_guessed);
+            Button btn_temp = findViewById(R.id.guess);
+
+            @Override
+            public void onTextChanged(CharSequence text, int start, int before, int count) {
+
+                if (temp.getText().length() != 0) {
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence text, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable edit) {
+                if (temp.getText().length() != 0) {
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     public void image_reguess(View view) {
         setContentView(R.layout.activity_main);
+        EditText input_check = (EditText) findViewById(R.id.num_guessed);
+        input_check.addTextChangedListener(new TextWatcher() {
+            EditText temp = (EditText) findViewById(R.id.num_guessed);
+            Button btn_temp = findViewById(R.id.guess);
+
+            @Override
+            public void onTextChanged(CharSequence text, int start, int before, int count) {
+
+                if (temp.getText().length() != 0) {
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence text, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable edit) {
+                if (temp.getText().length() != 0) {
+                    btn_temp.setVisibility(View.VISIBLE);
+                } else {
+                    btn_temp.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 }
