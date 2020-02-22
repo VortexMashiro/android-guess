@@ -40,10 +40,11 @@ jobs:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: ShaunLWM/action-release-debugapk@master
         env:
          GITHUB_TOKEN: ${{ secrets.TOKEN }}
          APP_FOLDER: app
+         RELEASE_TITLE: New Build
         with:
          tag_name: ${{ github.ref }}
          release_name: Release ${{ github.ref }}
