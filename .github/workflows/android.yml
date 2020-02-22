@@ -39,3 +39,11 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+         APP_FOLDER: app
+        with:
+         tag_name: ${{ github.ref }}
+         release_name: Release ${{ github.ref }}
